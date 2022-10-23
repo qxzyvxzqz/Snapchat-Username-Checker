@@ -1,5 +1,11 @@
 import requests
 
+try:
+    usernames = list(open(input("Username File Path: ")).read().strip().split())
+    output = input("Output File Path: ")
+except Exception as e:
+    print(f"[-] {e}")
+
 
 def checker():
     for username in usernames:
@@ -12,11 +18,6 @@ def checker():
 
 
 if __name__ == "__main__":
-    try:
-        usernames = list(open(input("Username File Path: ")).read().strip().split())
-        output = input("Output File Path: ")
-    except Exception as e:
-        print(f"[-] {e}")
     try:
         checker()
     except Exception as e:
